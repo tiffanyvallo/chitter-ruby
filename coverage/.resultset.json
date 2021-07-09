@@ -1,0 +1,25 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/tiffanyvallo/Makers/Projects/chitter-ruby/app.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          null
+        ]
+      }
+    },
+    "timestamp": 1625829573
+  }
+}
