@@ -87,9 +87,10 @@ bundle
 <br>
 
 ### Database Setup
-
-<br>
-
+To create the database and the tables need run
+```
+rake setup
+```
 ### Run App
 App is hosted on
 <br>
