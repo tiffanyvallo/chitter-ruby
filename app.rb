@@ -1,5 +1,7 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require 'pg'
+require 'sinatra/flash'
 
 class Chitter < Sinatra::Base
   configure :development do

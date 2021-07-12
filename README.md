@@ -87,7 +87,7 @@ bundle
 <br>
 
 ### Database Setup
-To create the database and the tables need run
+To create the database and the tables run
 ```
 rake setup
 ```
