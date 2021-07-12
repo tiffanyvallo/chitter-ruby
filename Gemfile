@@ -1,17 +1,20 @@
 # frozen_string_literal: true
 
+
 source 'https://rubygems.org'
 
-group :test do
-  gem 'capybara'
-  gem 'launchy'
-  gem 'pg'
-  gem 'rspec'
-  gem 'rubocop', require: false
-  gem 'selenium-webdriver'
-  gem 'simplecov', require: false
-  gem 'simplecov-console', require: false
-  gem 'sinatra'
-  gem 'sinatra-contrib'
-  gem 'sinatra-reloader'
-end
+git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
+
+gem 'bcrypt'
+gem 'capybara', group: :test
+gem 'launchy'
+gem 'pg'
+gem 'rake'
+gem 'rspec'
+gem 'rubocop'
+gem 'simplecov', require: false
+gem 'simplecov-console', require: false
+gem 'sinatra'
+gem 'sinatra-contrib'
+gem 'sinatra-flash'
+gem 'webrick'

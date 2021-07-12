@@ -12,14 +12,42 @@
           null,
           null,
           1,
-          0,
+          1,
+          null,
           null,
           null,
           1,
           null
         ]
+      },
+      "/Users/tiffanyvallo/Makers/Projects/chitter-ruby/spec/features/sign_up_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null
+        ]
+      },
+      "/Users/tiffanyvallo/Makers/Projects/chitter-ruby/spec/features/view_rootpage_spec.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1625830057
+    "timestamp": 1626127763
   }
 }
