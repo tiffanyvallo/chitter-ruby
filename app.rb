@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'sinatra/base'
 require 'sinatra/reloader'
 require 'pg'
@@ -17,12 +19,12 @@ class Chitter < Sinatra::Base
   get '/user/new' do
     erb :signup
   end
-  
+
   post '/user/new' do
-    user = User.create(params[:username], params[:email], params[:password])
+    User.create(params[:username], params[:email], params[:password])
     # flash[:confirm] = "Welcome #{username}! Account created!" if user
     redirect '/'
   end
 
-  run! if app_file == $0
+  run! if app_file == $PROGRAM_NAME
 end

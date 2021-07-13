@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'pg'
 
 task :setup do
@@ -20,6 +22,5 @@ task :setup do
       message VARCHAR(100),
       timestamp TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
     );")
-
   end
 end

@@ -1,11 +1,12 @@
+# frozen_string_literal: true
+
 require 'user'
 require 'pg'
 
 describe User do
-
   context '#.all' do
     it 'can list all users' do
-      connection = PG.connect(dbname: 'rubychitter_test')
+      PG.connect(dbname: 'rubychitter_test')
       10.times { |x| User.create('test1', "test#{x}@email.com", 'testpassword1') }
       user = User.all
       expect(user.first.username).to eq 'test1'
@@ -13,7 +14,6 @@ describe User do
       expect(user.first.password).to eq 'testpassword1'
     end
   end
-     
 
   context '#create' do
     it 'can create a user and add it to the db' do
@@ -24,5 +24,4 @@ describe User do
       expect(user.password).to eq 'testpassword1'
     end
   end
-
 end

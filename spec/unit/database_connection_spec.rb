@@ -1,11 +1,12 @@
+# frozen_string_literal: true
+
 require 'database_connection'
 
 describe DatabaseConnection do
-  
   context '#.setup' do
     it 'can set up the db' do
       expect(PG).to receive(:connect).with(dbname: 'rubychitter_test')
-      DatabaseConnection.setup('rubychitter_test') 
+      DatabaseConnection.setup('rubychitter_test')
     end
   end
 
@@ -19,8 +20,8 @@ describe DatabaseConnection do
   context '#.query' do
     it 'can respond to the db query' do
       connection = DatabaseConnection.setup('rubychitter_test')
-      expect(connection).to receive(:exec).with("SELECT * FROM users;")
-      DatabaseConnection.query("SELECT * FROM users;")
+      expect(connection).to receive(:exec).with('SELECT * FROM users;')
+      DatabaseConnection.query('SELECT * FROM users;')
     end
   end
 end

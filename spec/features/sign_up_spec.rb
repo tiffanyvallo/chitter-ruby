@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 feature 'sign up' do
   scenario 'user can sign up and get a confirmation' do
-    visit "/"
+    visit '/'
     click_button 'Sign Up'
     fill_in('username', with: 'test1')
     fill_in('email', with: 'test@email.com')
