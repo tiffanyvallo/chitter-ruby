@@ -19,7 +19,7 @@ describe DatabaseConnection do
   context '#.query' do
     it 'can respond to the db query' do
       connection = DatabaseConnection.setup('rubychitter_test')
-      expect(connection).to receive(:exec).with("SELECT * FROM users")
+      expect(connection).to receive(:exec).with("SELECT * FROM users;")
       DatabaseConnection.query("SELECT * FROM users;")
     end
   end
