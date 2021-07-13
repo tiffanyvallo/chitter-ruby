@@ -15,6 +15,8 @@ task :setup do
     );")
 
     connection.exec("CREATE TABLE peeps (peep_id SERIAL PRIMARY KEY,
+      user_id INT,
+      FOREIGN KEY (user_id) REFERENCES users (id),
       message VARCHAR(100),
       timestamp TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
     );")
