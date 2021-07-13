@@ -3,6 +3,7 @@ require 'sinatra/reloader'
 require 'pg'
 require 'sinatra/flash'
 require_relative './lib/user'
+require './db_connection_setup'
 
 class Chitter < Sinatra::Base
   configure :development do
@@ -18,7 +19,8 @@ class Chitter < Sinatra::Base
   end
   
   post '/user/new' do
-    User.create(params[:username], params[:email], params[:password])
+    user = User.create(params[:username], params[:email], params[:password])
+    # flash[:confirm] = "Welcome #{username}! Account created!" if user
     redirect '/'
   end
 
