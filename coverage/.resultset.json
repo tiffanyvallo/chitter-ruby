@@ -3,6 +3,8 @@
     "coverage": {
       "/Users/tiffanyvallo/Makers/Projects/chitter-ruby/app.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           1,
@@ -25,7 +27,6 @@
           null,
           1,
           1,
-          null,
           1,
           null,
           null,
@@ -35,11 +36,12 @@
       },
       "/Users/tiffanyvallo/Makers/Projects/chitter-ruby/lib/user.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           null,
           1,
-          null,
           1,
           null,
           1,
@@ -63,12 +65,13 @@
           null,
           null,
           null,
-          null,
           null
         ]
       },
       "/Users/tiffanyvallo/Makers/Projects/chitter-ruby/db_connection_setup.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           1,
@@ -80,10 +83,11 @@
       },
       "/Users/tiffanyvallo/Makers/Projects/chitter-ruby/lib/database_connection.rb": {
         "lines": [
-          1,
+          null,
           null,
           1,
           null,
+          1,
           1,
           4,
           null,
@@ -95,12 +99,13 @@
           1,
           15,
           null,
-          null,
           null
         ]
       },
       "/Users/tiffanyvallo/Makers/Projects/chitter-ruby/spec/features/sign_up_spec.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           1,
@@ -128,10 +133,11 @@
       },
       "/Users/tiffanyvallo/Makers/Projects/chitter-ruby/spec/unit/database_connection_spec.rb": {
         "lines": [
-          1,
+          null,
           null,
           1,
           null,
+          1,
           1,
           1,
           1,
@@ -158,11 +164,12 @@
       },
       "/Users/tiffanyvallo/Makers/Projects/chitter-ruby/spec/unit/user_spec.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           null,
           1,
-          null,
           1,
           1,
           1,
@@ -174,7 +181,6 @@
           null,
           null,
           null,
-          null,
           1,
           1,
           1,
@@ -182,13 +188,12 @@
           1,
           1,
           1,
-          null,
           null,
           null,
           null
         ]
       }
     },
-    "timestamp": 1626143818
+    "timestamp": 1626201170
   }
 }

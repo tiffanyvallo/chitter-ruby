@@ -22,7 +22,6 @@ class Chitter < Sinatra::Base
 
   post '/user/new' do
     User.create(params[:username], params[:email], params[:password])
-    # flash[:confirm] = "Welcome #{username}! Account created!" if user
     redirect '/'
   end
 
