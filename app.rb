@@ -2,6 +2,7 @@ require 'sinatra/base'
 require 'sinatra/reloader'
 require 'pg'
 require 'sinatra/flash'
+require_relative './lib/user'
 
 class Chitter < Sinatra::Base
   configure :development do
