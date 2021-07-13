@@ -8,5 +8,12 @@ describe DatabaseConnection do
       DatabaseConnection.setup('rubychitter_test') 
     end
   end
+
+  context '#.connection' do
+    it 'can connect and stay connected' do
+      connection = DatabaseConnection.setup('rubychitter_test')
+      expect(DatabaseConnection.connection).to eq connection
+    end
+  end
   
 end
