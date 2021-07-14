@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+require_relative '../unit/web_helper'
 
 feature 'sign up' do
   scenario 'user can sign up and get a confirmation' do
@@ -9,5 +10,11 @@ feature 'sign up' do
     fill_in('password', with: 'testpassword1')
     click_button 'Submit'
     expect(page).to have_content('Welcome!')
+  end
+
+  scenario 'existing user can not sign up again' do
+      signup
+      signup
+      expect(page).to have_content('User already exists, please log in!')
   end
 end
