@@ -6,3 +6,10 @@ def signup
   fill_in('password', with: 'testpassword1')
   click_button 'Submit'
 end
+
+def login
+  fill_in('email', with: 'test@email.com')
+  fill_in('password', with: 'testpassword1')
+  click_button 'Login'
+end
+

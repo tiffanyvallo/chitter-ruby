@@ -43,6 +43,12 @@ class Chitter < Sinatra::Base
     end
   end
 
+  post '/session/destroy' do
+    session[:user] = nil
+    # flash[:confirm] = "Successully logged out!"
+    redirect '/'
+  end
+
   get '/feed' do
     erb :feed
   end
