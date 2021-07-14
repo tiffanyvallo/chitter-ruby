@@ -24,4 +24,15 @@ describe User do
       expect(user.password).to eq 'testpassword1'
     end
   end
+
+  context '#.find' do
+    it 'can find a user from the db with the given email address' do
+      User.create('test1', 'test@email.com', 'testpassword1')
+      user = User.find('test@email.com')
+      expect(user.username).to eq('test1')
+    end
+    it 'return nil if no email mathches found' do
+      expect(User.find('test@email.com')).to eq(nil)
+    end
+  end
 end

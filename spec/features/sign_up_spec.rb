@@ -15,6 +15,6 @@ feature 'sign up' do
   scenario 'existing user can not sign up again' do
       signup
       signup
-      expect(page).to have_content('User already exists, please log in!')
+      expect(page).to have_content('Welcome!')
   end
 end

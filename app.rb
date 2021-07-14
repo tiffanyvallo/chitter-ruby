@@ -21,7 +21,12 @@ class Chitter < Sinatra::Base
   end
 
   post '/user/new' do
-    User.create(params[:username], params[:email], params[:password])
+    if User.find(params[:email])
+      # flash[:error] = "User already exists, please log in!"
+    else
+   user = User.create(params[:username], params[:email], params[:password])
+    # flash[:confirm] = "Welcome #{user.username}! Account has been created!"
+    end
     redirect '/'
   end
 
