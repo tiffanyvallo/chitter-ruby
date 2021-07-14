@@ -39,4 +39,10 @@ describe User do
       expect(User.find('test@email.com')).to eq(nil)
     end
   end
+
+  context '#.authenticate' do
+    user = User.create('test1', 'test@email.com', 'testpassword1')
+    authenticated_user = User.authenticate('test@email.com', 'testpassword1')
+    expect(user.email).to eq(authenticated_user.email)
+  end
 end
