@@ -10,6 +10,7 @@ require './db_connection_setup'
 class Chitter < Sinatra::Base
   configure :development do
     register Sinatra::Reloader
+    # register Sinatra::Flash
   end
 
   get '/' do
@@ -22,10 +23,10 @@ class Chitter < Sinatra::Base
 
   post '/user/new' do
     if User.find(params[:email])
-      # flash[:error] = "User already exists, please log in!"
+      #  flash[:error] = "User already exists, please log in!"
     else
    user = User.create(params[:username], params[:email], params[:password])
-    # flash[:confirm] = "Welcome #{user.username}! Account has been created!"
+    #  flash[:confirm] = "Welcome #{user.username}! Account has been created!"
     end
     redirect '/'
   end
