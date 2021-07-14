@@ -11,7 +11,7 @@ describe User do
       user = User.all
       expect(user.first.username).to eq 'test1'
       expect(user.first.email).to eq 'test0@email.com'
-      expect(user.first.password).to eq 'testpassword1'
+      
     end
   end
 
@@ -21,10 +21,10 @@ describe User do
       user = User.all.first
       expect(user.username).to eq 'test1'
       expect(user.email).to eq 'test@email.com'
-      expect(user.password).to eq 'testpassword1'
+     
     end
     it 'can encrypt the password when created' do
-      expect(Bcrypt::Password).to receive(:create).with('testpassword1')
+      expect(BCrypt::Password).to receive(:create).with('testpassword1')
       User.create('test1', 'test@email.com', 'testpassword1')
     end
   end
