@@ -23,6 +23,10 @@ describe User do
       expect(user.email).to eq 'test@email.com'
       expect(user.password).to eq 'testpassword1'
     end
+    it 'can encrypt the password when created' do
+      expect(Bcrypt::Password).to receive(:create).with('testpassword1')
+      User.create('test1', 'test@email.com', 'testpassword1')
+    end
   end
 
   context '#.find' do
