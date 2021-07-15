@@ -32,8 +32,8 @@ class Chitter < Sinatra::Base
   end
 
   post '/session/new' do
-    search = User.find(params[:email])
-    if search.password == params[:password]
+    search = User.authenticate(params[:email], params[:password])
+    if search
       user = session[:user]
       # flash[:confirm] = "Welcome #{user.username}! Successfully logged in!"
       redirect '/feed'
