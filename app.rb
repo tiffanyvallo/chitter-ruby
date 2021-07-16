@@ -51,6 +51,7 @@ class Chitter < Sinatra::Base
 
   get '/feed' do
     erb :feed
+    peeps = Peeps.all
   end
 
   # run! if app_file == $PROGRAM_NAME
