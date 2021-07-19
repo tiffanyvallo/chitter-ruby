@@ -1,6 +1,6 @@
 require 'peep'
 require 'pg'
 
-describe Chitter do
+describe Peep do
  
 end
