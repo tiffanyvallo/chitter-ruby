@@ -278,12 +278,19 @@
           null
         ]
       },
-      "/Users/tiffanyvallo/Makers/Projects/chitter-ruby/spec/unit/peeps_spec.rb": {
+      "/Users/tiffanyvallo/Makers/Projects/chitter-ruby/spec/unit/peep_spec.rb": {
         "lines": [
           1,
           1,
           null,
           1,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
           null,
           null
         ]
@@ -350,6 +357,6 @@
         ]
       }
     },
-    "timestamp": 1626728926
+    "timestamp": 1626729041
   }
 }
