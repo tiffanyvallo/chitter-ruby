@@ -5,7 +5,7 @@ feature 'Can view peeps' do
     signup
     login
     fill_in('message', with: '1st Test Peep!')
-    click_button('Post a Peep')
+    click_button('Post Peep')
     expect(page).to have_content("1st Test Peep!")
   end
 end
