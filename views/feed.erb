@@ -7,10 +7,26 @@
     <title>Document</title>
   </head>
   <body>
-
-    <h1>"Here's what's happening: "</h1>
     <form action="/session/destroy" method="post">
       <input type="submit" value="Logout" class="logout_submit">
     </form>
+
+    <div class="peeps_box">
+      <h1 class="peepsbox_heading">"Here's what's happening: "</h1>
+      <% @peeps.each do |peep| %>
+        <p class="peeps_list">
+          <%= peep.message%>
+          <br>
+          <div class="peeps_user">
+            <%= "@#{peep.user_id}"%>
+          </div>
+          <br>
+          <div class="peep_timestamp">
+            <%= "Posted on #{peep.timestamp}"%>
+          </div>
+        </p>
+      <% end %>
+    </div>
+
   </body>
 </html>

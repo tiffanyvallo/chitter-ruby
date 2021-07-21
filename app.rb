@@ -13,6 +13,12 @@ class Chitter < Sinatra::Base
      register Sinatra::Flash
   end
 
+  enable :sessions, :method_override
+  
+  before do
+    @user = User.find(column: 'id', value: session[:user_id])
+  end
+
   get '/' do
     erb :index
   end
@@ -22,19 +28,19 @@ class Chitter < Sinatra::Base
   end
 
   post '/user/new' do
-    if User.find(params[:email])
+    if User.find(column: 'email', value: params[:email])
         # flash[:error] = "User already exists, please log in!"
     else
-   user = User.create(params[:username], params[:email], params[:password])
+   user = User.create(username: params[:username], email: params[:email], password: params[:password])
       # flash[:confirm] = "Welcome #{user.username}! Account has been created!"
     end
     redirect '/'
   end
 
   post '/session/new' do
-    search = User.authenticate(params[:email], params[:password])
-    if search
-      user = session[:user]
+    user = User.authenticate(params[:email], params[:password])
+    if user
+      session[:user_id] = user.id
       # flash[:confirm] = "Welcome #{user.username}! Successfully logged in!"
       redirect '/feed'
     else
@@ -44,14 +50,15 @@ class Chitter < Sinatra::Base
   end
 
   post '/session/destroy' do
-    session[:user] = nil
+    session[:user_id] = nil
     # flash[:confirm] = "Successully logged out!"
     redirect '/'
   end
 
   get '/feed' do
+    redirect '/' unless @user
+    @peeps = Peep.all
     erb :feed
-    peeps = Peep.all
   end
 
   # run! if app_file == $PROGRAM_NAME
