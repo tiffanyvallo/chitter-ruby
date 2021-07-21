@@ -20,6 +20,12 @@ describe Peep do
       test1 = connection.exec("INSERT INTO peeps (user_id, message) VALUES('#{user.id}', '1st Test Peep!');")
       test2 = connection.exec("INSERT INTO peeps (user_id, message) VALUES('#{user2.id}', 'test peep 2');")
       peeps = Peep.all
+     
+      expect(peeps.size).to eq(2)
+      expect(peeps.first.message).to eq('1st Test Peep!')
+      expect(peeps.last.message).to eq('test peep 2')
+      expect(peeps.first.user_id).to eq(user.id)
+      expect(peeps.last.user_id).to eq(user2.id)
     end
   end
 end
