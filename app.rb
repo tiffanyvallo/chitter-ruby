@@ -61,5 +61,10 @@ class Chitter < Sinatra::Base
     erb :feed
   end
 
+  post '/feed' do
+    peep = Peep.create(user_id: params[:user_id], message: params[:message])
+    redirect '/feed'
+  end
+
   # run! if app_file == $PROGRAM_NAME
 end
