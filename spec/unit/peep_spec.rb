@@ -10,4 +10,15 @@ describe Peep do
       expect(peep.timestamp).to eq('2021-07-19')
     end
   end
+
+  context '#.all' do
+    it 'can show all the pepps' do
+      connection = PG.connect(db: 'rubychitter_test')
+      connection.exec("INSERT INTO peeps (message.timestamp) VALUES('test peep 1', '2021-07-19');")
+      connection.exec("INSERT INTO peeps (message.timestamp) VALUES('test peep 2', '2021-07-20');")
+      peep = Peep.all
+      expect(peep.first.message).to eq('test peep 1')
+      expect(peep.first.timestamp).to eq('2021-07-19')
+    end
+  end
 end
