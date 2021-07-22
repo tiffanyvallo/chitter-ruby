@@ -92,7 +92,7 @@ To create the database and the tables run
 rake setup
 ```
 ### Run App
-App is hosted on
+App is hosted on localhost/9292
 <br>
 
 ### Run Tests
