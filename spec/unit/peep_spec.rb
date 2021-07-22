@@ -28,4 +28,15 @@ describe Peep do
       expect(peeps.last.user_id).to eq(user2.id)
     end
   end
+
+  context '#.create' do
+    it 'can create a peep' do
+      user = User.create(username: 'test1', email: 'test@email.com', password: 'testpassword1')
+      Peep.create(user_id: user.id, message: 'peep testing create')
+      trial = Peep.all.first
+      expect(trial.user_id).to eq(user.id)
+      expect(trial.message).to eq('peep testing create')
+      expect(trial.peep_id).not_to be_nil
+    end
+  end
 end
