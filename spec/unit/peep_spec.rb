@@ -21,10 +21,10 @@ describe Peep do
       peeps = Peep.all
      
       expect(peeps.size).to eq(2)
-      expect(peeps.first.message).to eq('1st Test Peep!')
-      expect(peeps.last.message).to eq('test peep 2')
-      expect(peeps.first.user_id).to eq(user.id)
-      expect(peeps.last.user_id).to eq(user2.id)
+      expect(peeps.last.message).to eq('1st Test Peep!')
+      expect(peeps.first.message).to eq('test peep 2')
+      expect(peeps.last.user_id).to eq(user.id)
+      expect(peeps.first.user_id).to eq(user2.id)
     end
   end
 
