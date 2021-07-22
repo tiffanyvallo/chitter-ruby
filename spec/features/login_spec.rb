@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require_relative '../unit/web_helper'
 
 feature 'login' do

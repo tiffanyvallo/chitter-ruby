@@ -5,16 +5,17 @@ require 'sinatra/reloader'
 require 'pg'
 require 'sinatra/flash'
 require_relative './lib/user'
+require_relative './lib/peep'
 require './db_connection_setup'
 
 class Chitter < Sinatra::Base
   configure :development do
     register Sinatra::Reloader
-     register Sinatra::Flash
+    register Sinatra::Flash
   end
 
   enable :sessions, :method_override
-  
+
   before do
     @user = User.find(column: 'id', value: session[:user_id])
   end
@@ -29,9 +30,9 @@ class Chitter < Sinatra::Base
 
   post '/user/new' do
     if User.find(column: 'email', value: params[:email])
-        # flash[:error] = "User already exists, please log in!"
+    # flash[:error] = "User already exists, please log in!"
     else
-   user = User.create(username: params[:username], email: params[:email], password: params[:password])
+      User.create(username: params[:username], email: params[:email], password: params[:password])
       # flash[:confirm] = "Welcome #{user.username}! Account has been created!"
     end
     redirect '/'
@@ -62,7 +63,7 @@ class Chitter < Sinatra::Base
   end
 
   post '/feed' do
-    peep = Peep.create(user_id: params[:user_id], message: params[:message])
+    Peep.create(user_id: params[:user_id], message: params[:message])
     redirect '/feed'
   end
 

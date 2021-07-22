@@ -21,7 +21,6 @@ describe User do
       expect(user.username).to eq 'test1'
       expect(user.email).to eq 'test@email.com'
       expect(user.id).not_to be_nil
-     
     end
     it 'can encrypt the password when created' do
       expect(BCrypt::Password).to receive(:create).with('testpassword1')
@@ -45,9 +44,9 @@ describe User do
 
   context '#.authenticate' do
     it 'can return the correct user when email and password match' do
-    user = User.create(username: 'test1', email: 'test@email.com', password: 'testpassword1')
-    authenticated_user = User.authenticate('test@email.com', 'testpassword1')
-    expect(user.email).to eq(authenticated_user.email)
+      user = User.create(username: 'test1', email: 'test@email.com', password: 'testpassword1')
+      authenticated_user = User.authenticate('test@email.com', 'testpassword1')
+      expect(user.email).to eq(authenticated_user.email)
     end
   end
 end

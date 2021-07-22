@@ -1,9 +1,10 @@
+# frozen_string_literal: true
+
 require 'peep'
 require 'pg'
 
-
 describe Peep do
-  let(:peep) { double(:peep, peep_id: 1, message: 'Test peep', timestamp: '2021-07-19')}
+  let(:peep) { double(:peep, peep_id: 1, message: 'Test peep', timestamp: '2021-07-19') }
   context '#initialize' do
     it 'should initialize with set attributes' do
       expect(peep.peep_id).to eq(1)
@@ -19,7 +20,7 @@ describe Peep do
       Peep.create(user_id: user.id, message: '1st Test Peep!')
       Peep.create(user_id: user2.id, message: 'test peep 2')
       peeps = Peep.all
-     
+
       expect(peeps.size).to eq(2)
       expect(peeps.last.message).to eq('1st Test Peep!')
       expect(peeps.first.message).to eq('test peep 2')

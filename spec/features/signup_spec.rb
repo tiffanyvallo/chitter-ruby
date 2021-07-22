@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require_relative '../unit/web_helper'
 
 feature 'sign up' do
@@ -13,8 +14,8 @@ feature 'sign up' do
   end
 
   scenario 'existing user can not sign up again' do
-      signup
-      signup
-      expect(page).to have_content('Welcome!')
+    signup
+    signup
+    expect(page).to have_content('Welcome!')
   end
 end

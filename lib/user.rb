@@ -26,27 +26,29 @@ class User
                                         VALUES('#{username}', '#{email}', '#{encrypted_password}')
                                         RETURNING id, username, email;")
     User.new(id: result[0]['id'],
-            username: result[0]['username'],
-            email: result[0]['email'])
+             username: result[0]['username'],
+             email: result[0]['email'])
   end
 
   def self.find(column:, value:)
-    return unless ['id', 'email'].include? column
+    return unless %w[id email].include? column
     return unless value
+
     result = DatabaseConnection.query("SELECT * FROM users WHERE #{column} = '#{value}';")
-    return if result.count() == 0
+    return if result.count.zero?
+
     User.new(id: result[0]['id'],
-      username: result[0]['username'],
-      email: result[0]['email'])
+             username: result[0]['username'],
+             email: result[0]['email'])
   end
 
   def self.authenticate(email, password)
     result = DatabaseConnection.query("SELECT * FROM users WHERE email = '#{email}';")
     return unless result.any?
     return unless BCrypt::Password.new(result[0]['password']) == password
-    User.new(id: result[0]['id'],
-      username: result[0]['username'],
-      email: result[0]['email'])
-  end
 
+    User.new(id: result[0]['id'],
+             username: result[0]['username'],
+             email: result[0]['email'])
+  end
 end

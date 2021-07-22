@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative '../unit/web_helper'
 
 feature 'Can view peeps' do
@@ -6,6 +8,6 @@ feature 'Can view peeps' do
     login
     fill_in('message', with: '1st Test Peep!')
     click_button('Post Peep')
-    expect(page).to have_content("1st Test Peep!")
+    expect(page).to have_content('1st Test Peep!')
   end
 end
