@@ -1,3 +1,6 @@
+require 'pg'
+require './db_connection_setup'
+
 class Peep 
 
   attr_reader :peep_id, :user_id, :message, :timestamp
@@ -10,7 +13,7 @@ class Peep
   end
 
   def self.all
-    result = DatabaseConnection.query('SELECT * FROM peeps;')
+    result = DatabaseConnection.query("SELECT * FROM peeps;")
     result.map do |peep|
     Peep.new(peep_id: peep['peep_id'], 
             user_id: peep['user_id'], 

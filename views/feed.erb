@@ -13,6 +13,7 @@
 <div class="create_peepbox">
 <h1> Write your peep here: </h1>
 <form action="/feed" method="post" >
+<input type="hidden" name="user_id" id="user_id" value="<%= @user.id %>">
 <textarea id="message" name="message" rows="5" cols="20" class="peep_textarea" placeholder="What's on your mind? What's happening? Create a peep here..."></textarea>
 <br>
 <input type="submit" value="Post Peep" id="Post Peep">

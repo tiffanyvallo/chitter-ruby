@@ -16,9 +16,8 @@ describe Peep do
     it 'can show all the peeps' do
       user = User.create(username: 'test1', email: 'test@email.com', password: 'testpassword1')
       user2 = User.create(username: 'test2', email: 'test2@email.com', password: 'testpassword2')
-      connection = PG.connect(dbname: 'rubychitter_test')
-      test1 = connection.exec("INSERT INTO peeps (user_id, message) VALUES('#{user.id}', '1st Test Peep!');")
-      test2 = connection.exec("INSERT INTO peeps (user_id, message) VALUES('#{user2.id}', 'test peep 2');")
+      Peep.create(user_id: user.id, message: '1st Test Peep!')
+      Peep.create(user_id: user2.id, message: 'test peep 2')
       peeps = Peep.all
      
       expect(peeps.size).to eq(2)
@@ -32,8 +31,7 @@ describe Peep do
   context '#.create' do
     it 'can create a peep' do
       user = User.create(username: 'test1', email: 'test@email.com', password: 'testpassword1')
-      Peep.create(user_id: user.id, message: 'peep testing create')
-      trial = Peep.all.first
+      trial = Peep.create(user_id: user.id, message: 'peep testing create')
       expect(trial.user_id).to eq(user.id)
       expect(trial.message).to eq('peep testing create')
       expect(trial.peep_id).not_to be_nil
