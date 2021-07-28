@@ -7,7 +7,7 @@ require 'sinatra/flash'
 require_relative './lib/user'
 require_relative './lib/peep'
 require './db_connection_setup'
-config.assets.initialize_on_precompile = false
+
 
 class Chitter < Sinatra::Base
   configure :development do
