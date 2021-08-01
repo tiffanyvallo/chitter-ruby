@@ -8,7 +8,6 @@ require_relative './lib/user'
 require_relative './lib/peep'
 require './db_connection_setup'
 
-
 class Chitter < Sinatra::Base
   configure :development do
     register Sinatra::Reloader
