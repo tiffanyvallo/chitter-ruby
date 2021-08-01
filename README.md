@@ -92,7 +92,8 @@ To create the database and the tables run
 rake setup
 ```
 ### Run App
-App is hosted on localhost/9292
+App is hosted on localhost/9292. Run ```rackup``` and vist localhost/9292 on your selected browser
+
 <br>
 
 ### Run Tests
