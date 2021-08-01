@@ -17,23 +17,23 @@ describe Peep do
     it 'can show all the peeps' do
       user = User.create(username: 'test1', email: 'test@email.com', password: 'testpassword1')
       user2 = User.create(username: 'test2', email: 'test2@email.com', password: 'testpassword2')
-      Peep.create(user_id: user.id, message: '1st Test Peep!')
-      Peep.create(user_id: user2.id, message: 'test peep 2')
+      Peep.create(username: user.username, message: '1st Test Peep!')
+      Peep.create(username: user2.username, message: 'test peep 2')
       peeps = Peep.all
 
       expect(peeps.size).to eq(2)
       expect(peeps.last.message).to eq('1st Test Peep!')
       expect(peeps.first.message).to eq('test peep 2')
-      expect(peeps.last.user_id).to eq(user.id)
-      expect(peeps.first.user_id).to eq(user2.id)
+      expect(peeps.last.username).to eq(user.username)
+      expect(peeps.first.username).to eq(user2.username)
     end
   end
 
   context '#.create' do
     it 'can create a peep' do
       user = User.create(username: 'test1', email: 'test@email.com', password: 'testpassword1')
-      trial = Peep.create(user_id: user.id, message: 'peep testing create')
-      expect(trial.user_id).to eq(user.id)
+      trial = Peep.create(username: user.username, message: 'peep testing create')
+      expect(trial.username).to eq(user.username)
       expect(trial.message).to eq('peep testing create')
       expect(trial.peep_id).not_to be_nil
     end

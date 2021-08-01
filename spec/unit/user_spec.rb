@@ -6,9 +6,9 @@ require 'pg'
 describe User do
   context '#.all' do
     it 'can list all users' do
-      10.times { |x| User.create(username: 'test1', email: "test#{x}@email.com", password: 'testpassword1') }
+      10.times { |x| User.create(username: "test#{x}", email: "test#{x}@email.com", password: 'testpassword1') }
       user = User.all
-      expect(user.first.username).to eq 'test1'
+      expect(user.first.username).to eq 'test0'
       expect(user.first.email).to eq 'test0@email.com'
       expect(user.length).to eq(10)
     end
@@ -24,7 +24,7 @@ describe User do
     end
     it 'can encrypt the password when created' do
       expect(BCrypt::Password).to receive(:create).with('testpassword1')
-      User.create(username: 'test1', email: 'test@email.com', password: 'testpassword1')
+      User.create(username: 'test2', email: 'test@email.com', password: 'testpassword1')
     end
   end
 

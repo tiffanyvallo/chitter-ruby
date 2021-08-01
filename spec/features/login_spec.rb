@@ -8,6 +8,6 @@ feature 'login' do
     fill_in('email', with: 'test@email.com')
     fill_in('password', with: 'testpassword1')
     click_button 'Login'
-    expect(page).to have_content("Here's what's happening: ")
+    expect(page).to have_content("🐥Chitter🐥\nHi Test1\nWrite your peep here:\nHere's what's happening:")
   end
 end
