@@ -11,14 +11,14 @@ task :setup do
     connection = PG.connect(dbname: database)
 
     connection.exec("CREATE TABLE users (id SERIAL PRIMARY KEY,
-      username VARCHAR (50),
+      username VARCHAR (50) UNIQUE,
       email VARCHAR (50) UNIQUE,
       password VARCHAR (100)
     );")
 
     connection.exec("CREATE TABLE peeps (peep_id SERIAL PRIMARY KEY,
-      user_id INT,
-      FOREIGN KEY (user_id) REFERENCES users (id),
+      username VARCHAR (50),
+      FOREIGN KEY (username) REFERENCES users (username),
       message VARCHAR(100),
       timestamp TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
     );")

@@ -12,9 +12,10 @@
       <input type="submit" value="Logout" class="logout_submit">
     </form>
 <div class="create_peepbox">
+<h1>Hi <%= @user.username.capitalize %></h1>
 <h1> Write your peep here: </h1>
 <form action="/feed" method="post" >
-<input type="hidden" name="user_id" id="user_id" value="<%= @user.id %>">
+<input type="hidden" name="username" id="username" value="<%= @user.username %>">
 <textarea id="message" name="message" rows="5" cols="20" class="peep_textarea" placeholder="What's on your mind? What's happening? Create a peep here..."></textarea>
 <br>
 <input type="submit" value="Post Peep" id="Post Peep">
@@ -23,13 +24,13 @@
 
 
     <div class="peeps_box">
-      <h1 class="peepsbox_heading">"Here's what's happening: "</h1>
+      <h1 class="peepsbox_heading">Here's what's happening: </h1>
       <% @peeps.each do |peep| %>
         <p class="peeps_list">
           <%= peep.message%>
           <br>
           <div class="peeps_user">
-            <%= "@#{peep.user_id}"%>
+            <%= "@#{peep.username}"%>
           </div>
           <br>
           <div class="peep_timestamp">
