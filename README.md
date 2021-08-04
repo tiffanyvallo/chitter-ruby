@@ -133,3 +133,6 @@ show timestamp
 add image here
 <br>
 </details>
+
+## 1st Attempt
+Click [here](https://github.com/tiffanyvallo/chitter-challenge) to view my original attempt creating Chitter
