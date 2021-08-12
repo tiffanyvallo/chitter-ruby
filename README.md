@@ -5,39 +5,47 @@ Re-create a clone of Twitter in Ruby to ensure I am ready for the applier's stag
 <p>&nbsp;</p>
 
 ## User Stories
+
 ```
 As a Maker
-So that I can let people know what I am doing  
+So that I can let people know what I am doing
 I want to post a message (peep) to chitter
 ```
+
 ```
 As a maker
-So that I can see what others are saying  
+So that I can see what others are saying
 I want to see all peeps in reverse chronological order
 ```
+
 ```
 As a Maker
 So that I can better appreciate the context of a peep
 I want to see the time at which it was made
 ```
+
 ```
 As a Maker
 So that I can post messages on Chitter as me
 I want to sign up for Chitter
 ```
+
 ```
 As a Maker
 So that only I can post messages on Chitter as me
 I want to log in to Chitter
 ```
+
 ```
 As a Maker
 So that I can avoid others posting messages on Chitter as me
 I want to log out of Chitter
 ```
+
 <p>&nbsp;</p>
 
 ### Domain Model
+
 <details>
 <summary> Users can create an account  </summary>
 <br>
@@ -59,18 +67,22 @@ I want to log out of Chitter
 <p>&nbsp;</p>
 
 ## Tech Stack
+
 Frontend
-* HTML
-* CSS
-  
+
+- HTML
+- CSS
+
 Backend
-* Ruby
-* Sinata Web Framework
-* PostgresSQL
-  
+
+- Ruby
+- Sinata Web Framework
+- PostgresSQL
+
 Testing
-* RSpec
-* Capybara
+
+- RSpec
+- Capybara
 <p>&nbsp;</p>
 
 ## How to install and run
@@ -78,40 +90,51 @@ Testing
 <br>
 
 ### Project Setup
+
 ```
 git clone
 ```
+
 ```
 bundle
 ```
+
 <br>
 
 ### Database Setup
+
 To create the database and the tables run
+
 ```
 rake setup
 ```
+
 ### Run App
-App is hosted on localhost/9292. Run ```rackup``` and vist localhost/9292 on your selected browser
+
+App is hosted on localhost/9292. Run `rackup` and vist localhost/9292 on your selected browser
 
 <br>
 
 ### Run Tests
+
 ```
 rspec
 ```
+
 <br>
 
 ### Run Linting
+
 ```
 rubocop
 ```
+
 <p>&nbsp;</p>
 
 ## User Interface Flow
+
 <details>
 <summary> Sign Up </summary>
-add image here
 <br>
 </details>
 
@@ -135,4 +158,5 @@ add image here
 </details>
 
 ## 1st Attempt
+
 Click [here](https://github.com/tiffanyvallo/chitter-challenge) to view my original attempt creating Chitter
