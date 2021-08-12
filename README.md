@@ -136,25 +136,31 @@ rubocop
 <details>
 <summary> Sign Up </summary>
 <br>
+<img src="/public/images/signup.png">
 </details>
 
 <details>
 <summary> Login </summary>
-add image here
 <br>
+<img  src="/public/images/login.png">
 </details>
 
 <details>
 <summary> Create a Peep </summary>
-add image here
-show timestamp
+<img  src="/public/images/create_peep.png">
 <br>
 </details>
 
 <details>
-<summary> Logout </summary>
-add image here
+<summary> View all Peeps </summary>
+<img  src="/public/images/view_peeps.png">
 <br>
+</details>
+
+<details>
+<summary> Feed Page </summary>
+<br>
+<img src="/public/images/feed_page.png">
 </details>
 
 ## 1st Attempt
