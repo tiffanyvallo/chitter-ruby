@@ -8,44 +8,54 @@
     <title>Feed</title>
   </head>
   <body>
-  <div class="neons col-12">
-         <h1>&#128037;CHITTER&#128037;</h1>
-      </div>
-    
+    <div class="neons col-12">
+      <h1>&#128037;CHITTER&#128037;</h1>
+    </div>
+<h3>Hi
+      <%= @user.username.capitalize %></h3>
+
     <form action="/session/destroy" method="post">
       <input type="submit" value="Logout" class="logout">
     </form>
 
-<h3>Hi <%= @user.username.capitalize %></h3>   
-
-<div class="login-box">
-<form action="/feed" method="post" >
-<h2> Write your peep here: </h2>
-<input type="hidden" name="username" id="username" value="<%= @user.username %>">
-<textarea class="textarea" id="message" name="message" rows="10" cols="35" placeholder="What's on your mind?"></textarea>
-<br>
-<input type="submit" value="Post Peep" id="Post Peep" class="button">
-</form>
-</div>
-</div>
-
-
-    <div class="login-box peep">
-      <h2>Here's what's happening: </h2>
-      <% @peeps.each do |peep| %>
-        <p class="user-box">
-          <%= peep.message%>
-          <br>
-          <div class="peep_deets">
-            <%= "Posted by @#{peep.username}"%>
-          </div>
-          <br>
-          <div class="peep_deets">
-            <%= "Posted on #{peep.timestamp}"%>
-          </div>
-        </p>
-      <% end %>
     
 
+    <div class="login-box">
+      <form action="/feed" method="post">
+        <h2>
+          Write your peep here:
+        </h2>
+        <input type="hidden" name="username" id="username" value="<%= @user.username %>">
+        <textarea class="textarea" id="message" name="message" rows="10" cols="35" placeholder="What's on your mind?"></textarea>
+        <br>
+        <input type="submit" value="Post Peep" id="Post Peep" class="button">
+      </form>
+    </div>
+  </div>
+
+  <div class="login-box peep">
+    <h2>Here's what's happening:
+    </h2>
+    <% @peeps.each do |peep| %>
+      <p class="user-box">
+        <%= peep.message%>
+        <br>
+        <div class="peep_deets">
+          <%= "Posted by @#{peep.username}"%>
+        </div>
+        <br>
+        <div class="peep_deets">
+          <%= "Posted on #{peep.timestamp}"%>
+        </div>
+      </p>
+    <% end %>
+    </div>
+
   </body>
+  <footer>
+    <p>
+      ©Tiffany Vallo ||
+      <a href="https://github.com/tiffanyvallo">github</a>
+    </p>
+  </footer>
 </html>

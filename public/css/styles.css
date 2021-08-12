@@ -2,33 +2,47 @@ body {
   background-color: #1f161f;
 }
 
-h1{
-  color: #DB8680;
+h1 {
+  color: #db8680;
   text-align: center;
   font-size: 3rem;
-  
 }
 
-h3{
-  color: #DB8680;
+h3 {
+  color: #db8680;
   text-align: center;
-  font-size: 3rem;
+  font-size: 40px;
   margin-top: -3rem;
+  padding-top: 10px;
 }
 
-.logout{
+footer {
+  color: #db8680;
+  font-size: small;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.logout {
   position: relative;
   display: right;
   margin: 0 auto;
   padding: 10px 20px;
-  color: #DB8680;
+  color: #db8680;
   font-size: 16px;
   text-decoration: none;
   text-transform: uppercase;
   overflow: hidden;
-  transition: .5s;
+  transition: 0.5s;
   margin-top: 10px;
-  letter-spacing: 4px
+  letter-spacing: 4px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-top: 1rem;
 }
 
 .neons {
@@ -37,26 +51,29 @@ h3{
 }
 
 .neons h1 {
- font-size: 4rem;
- text-align: center;
+  font-size: 4rem;
+  text-align: center;
   font-weight: bold;
- -webkit-animation: glow 2s ease-in-out infinite alternate;
- -moz-animation: glow 2s ease-in-out infinite alternate;
- animation: glow 2s ease-in-out infinite alternate;
+  -webkit-animation: glow 2s ease-in-out infinite alternate;
+  -moz-animation: glow 2s ease-in-out infinite alternate;
+  animation: glow 2s ease-in-out infinite alternate;
 }
 
 @-webkit-keyframes glow {
-    from {
-     color: #F2D2CF;
-   text-shadow: 0 0 8px #E4A4A0, 0 0 10px #E4A4A0, 0 0 15px #E4A4A0, 0 0 20px #E4A4A0, 0 0 25px #E4A4A0, 0 0 30px #E4A4A0, 0 0 35px #E4A4A0, 0 0 40px #E4A4A0;
- }
- 
- to {
-    color: #DB8680;
-   text-shadow: 0 0 8px #E4A4A0, 0 0 10px #E4A4A0, 0 0 15px #E4A4A0, 0 0 20px #E4A4A0, 0 0 25px #E4A4A0, 0 0 30px #E4A4A0, 0 0 35px #E4A4A0, 0 1 40px #E4A4A0;
- }
-}
+  from {
+    color: #f2d2cf;
+    text-shadow: 0 0 8px #e4a4a0, 0 0 10px #e4a4a0, 0 0 15px #e4a4a0,
+      0 0 20px #e4a4a0, 0 0 25px #e4a4a0, 0 0 30px #e4a4a0, 0 0 35px #e4a4a0,
+      0 0 40px #e4a4a0;
+  }
 
+  to {
+    color: #db8680;
+    text-shadow: 0 0 8px #e4a4a0, 0 0 10px #e4a4a0, 0 0 15px #e4a4a0,
+      0 0 20px #e4a4a0, 0 0 25px #e4a4a0, 0 0 30px #e4a4a0, 0 0 35px #e4a4a0,
+      0 1 40px #e4a4a0;
+  }
+}
 
 .login-box {
   position: absolute;
@@ -67,7 +84,7 @@ h3{
   transform: translate(-50%, -50%);
   background: #302130;
   box-sizing: border-box;
-  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
   border-radius: 10px;
   margin: auto;
   display: grid;
@@ -80,31 +97,30 @@ h3{
   height: 300px;
 }
 .peep p {
-  color: #DB8680;
+  color: #db8680;
   text-align: center;
   font-size: 1.7rem;
 }
 
 .peep_deets {
-  color: #DB8680;
+  color: #db8680;
   text-align: left;
   font-size: 0.9em;
   font-style: italic;
 }
 
 textarea {
-  color: #DB8680;
+  color: #db8680;
   background-color: #302130;
   margin-left: auto;
   margin-right: auto;
   display: block;
-  
 }
 
 .login-box h2 {
   margin: 0 0 30px;
   padding: 0;
-  color: #DB8680;
+  color: #db8680;
 
   text-align: center;
   font-size: 2rem;
@@ -118,29 +134,29 @@ textarea {
   width: 100%;
   padding: 10px 0;
   font-size: 16px;
-  color: #DB8680;
+  color: #db8680;
   margin-bottom: 30px;
   border: none;
-  border-bottom: 1px solid #DB8680;
+  border-bottom: 1px solid #db8680;
   outline: none;
   background: transparent;
 }
 .login-box .user-box label {
   position: absolute;
-  top:0;
+  top: 0;
   left: 0;
   padding: 10px 0;
   font-size: 16px;
-  color: #DB8680;
+  color: #db8680;
   pointer-events: none;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .login-box .user-box input:focus ~ label,
 .login-box .user-box input:valid ~ label {
   top: -20px;
   left: 0;
-  color: #DB8680;
+  color: #db8680;
   font-size: 12px;
 }
 
@@ -149,24 +165,24 @@ textarea {
   display: block;
   margin: 0 auto;
   padding: 10px 20px;
-  color: #DB8680;
+  color: #db8680;
   font-size: 16px;
   text-decoration: none;
   text-transform: uppercase;
   overflow: hidden;
-  transition: .5s;
+  transition: 0.5s;
   margin-top: 10px;
-  letter-spacing: 4px
+  letter-spacing: 4px;
 }
 
+
+
 .login-box .button:hover {
-  background: #DB8680;
-  color: #F2D2CF;
+  background: #db8680;
+  color: #f2d2cf;
   border-radius: 5px;
-  box-shadow: 0 0 5px #E4A4A0,
-              0 0 25px #E4A4A0,
-              0 0 50px #E4A4A0,
-              0 0 100px #E4A4A0;
+  box-shadow: 0 0 5px #e4a4a0, 0 0 25px #e4a4a0, 0 0 50px #e4a4a0,
+    0 0 100px #e4a4a0;
 }
 
 .login-box .button span {
@@ -179,7 +195,7 @@ textarea {
   left: -100%;
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, transparent, #DB8680);
+  background: linear-gradient(90deg, transparent, #db8680);
   animation: btn-anim1 1s linear infinite;
 }
 
@@ -187,7 +203,8 @@ textarea {
   0% {
     left: -100%;
   }
-  50%,100% {
+  50%,
+  100% {
     left: 100%;
   }
 }
@@ -197,16 +214,17 @@ textarea {
   right: 0;
   width: 2px;
   height: 100%;
-  background: linear-gradient(180deg, transparent, #DB8680);
+  background: linear-gradient(180deg, transparent, #db8680);
   animation: btn-anim2 1s linear infinite;
-  animation-delay: .25s
+  animation-delay: 0.25s;
 }
 
 @keyframes btn-anim2 {
   0% {
     top: -100%;
   }
-  50%,100% {
+  50%,
+  100% {
     top: 100%;
   }
 }
@@ -216,16 +234,17 @@ textarea {
   right: -100%;
   width: 100%;
   height: 2px;
-  background: linear-gradient(270deg, transparent, #DB8680);
+  background: linear-gradient(270deg, transparent, #db8680);
   animation: btn-anim3 1s linear infinite;
-  animation-delay: .5s
+  animation-delay: 0.5s;
 }
 
 @keyframes btn-anim3 {
   0% {
     right: -100%;
   }
-  50%,100% {
+  50%,
+  100% {
     right: 100%;
   }
 }
@@ -235,17 +254,17 @@ textarea {
   left: 0;
   width: 2px;
   height: 100%;
-  background: linear-gradient(360deg, transparent, #DB8680);
+  background: linear-gradient(360deg, transparent, #db8680);
   animation: btn-anim4 1s linear infinite;
-  animation-delay: .75s
+  animation-delay: 0.75s;
 }
 
 @keyframes btn-anim4 {
   0% {
     bottom: -100%;
   }
-  50%,100% {
+  50%,
+  100% {
     bottom: 100%;
   }
 }
-
